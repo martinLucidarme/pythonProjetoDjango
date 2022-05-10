@@ -43,3 +43,26 @@ Now Static file are working and accessible out of app folder
 Now with image:
 Do a {%load static%} comand in html where u want the image
 in image source: < img src="{% static 'path_of_image' %}">
+
+
+Load Dynamics URLs:
+in templates>urls we defined a 'name' in urlpatterns
+same name as function in views.py and same name as html page in views.py
+
+In templates> static>base.html we put full URL to call pages
+instead I can use name like this:
+
+<a class"nav-link" href= {% url 'name'%}>
+then no need to write whole url, just give name and call it
+
+-Include partial files-
+breaks html file in several parts to have a better modularisation
+template>parciais
+convention: partial html: _name.html
+
+I can then cut a part of my base template and put it in another _name.html file
+then
+in base template, where I want this _name.html to appear:
+{% include 'caminho/_name.html' %}
+in _name.html, on top:
+{% load static %}
